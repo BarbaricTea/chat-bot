@@ -12,9 +12,16 @@ export const api = createApi({
         body: payload,
       }),
     }),
+    postAiCode: build.mutation({
+      query: (payload) => ({
+        url: "openai/code",
+        method: "POST",
+        body: payload,
+      }),
+    }),
   }),
 });
 
 export const {
-  usePostAiTextMutation
+  usePostAiTextMutation, usePostAiCodeMutation
 } = api;
